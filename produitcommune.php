@@ -14,6 +14,7 @@ include_once 'controllers/productCommuneController.php';
                     <p><?= $productCommune->exploitationName ?></p>
                     <p><?= $productCommune->communeName ?></p>
                     <p><?= $productCommune->publicationDate ?></p>
+                    <p><?= $productCommune->imageLink ?></p>
                     <p><a class="btn-md" href="#?productId=<?= $productCommune->proposalId ?>">Liste de produits par commune</a></p>
                     <div class="list-enquiry">
                         <ul>

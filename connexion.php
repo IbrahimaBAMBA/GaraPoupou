@@ -9,16 +9,16 @@ include_once 'header.php';
     <fieldset>
         <legend>Connexion</legend>
         <div class="form-group">
-            <label for="email" class="col-lg-2 control-label <?= isset($formError['email']) ? 'inputError' : '' ?>">Email : </label>
+            <label for="email" class="col-lg-2 control-label <?= isset($formError['email']) ? 'inputError' : '' ?>">Email</label>
             <div class="col-lg-10">
                 <input type="email" class="form-control" name="email" value="<?= $users->email ?>" placeholder="Email" />
             </div>
         </div>
         <?= isset($formError['email']) ? $formError['email'] : '' ?>
         <div class="form-group">
-            <label for="password" class="col-lg-2 control-label <?= isset($formError['password']) ? 'inputError' : '' ?>">Mot de passe : </label>
+            <label for="password" class="col-lg-2 control-label <?= isset($formError['password']) ? 'inputError' : '' ?>">Mot de passe</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" name="password" value="<?= $users->password ?>" placeholder="Nom" />
+                <input type="password" class="form-control" name="password" value="<?= $users->password ?>" placeholder="Mot de passe" />
             </div>
         </div>
         <?= isset($formError['password']) ? $formError['password'] : '' ?>

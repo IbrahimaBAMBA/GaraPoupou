@@ -66,6 +66,7 @@
                 Calendrier des vaccins et bien plus encore...</p>
         </div>
     </div>
+</div>
     <map name="map">
 
         <!-- #$AUTHOR:Ibrahima -->

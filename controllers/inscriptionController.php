@@ -2,6 +2,7 @@
 <?php
 $regName = '#^[A-Za-z]+$#';
 $regemail = '#[A-Z-a-z-0-9-.éàèîÏôöùüûêëç]{2,}@[A-Z-a-z-0-9éèàêâùïüëç]{2,}[.][a-z]{2,6}$#';
+$regPhone = '#^0[1-9]((-[0-9]{2}){4}|(([0-9]{2})){4}|(\/[0-9]{2}){4}|(\\[0-9]{2}){4}|(_[0-9]{2}){4}|(\s[0-9]{2}){4})$#';
 
 $insertSuccess = false;
 $formError = array();
@@ -33,8 +34,8 @@ if (count($_POST) > 0) {
         $formError['firstName'] = 'Le prénom n\'est pas renseigné';
     }
     if (!empty($_POST['phoneNumber'])) {
-        if (preg_match($regemail, $_POST['phoneNumber'])) {
-            $users->email = htmlspecialchars($_POST['phoneNumber']);
+        if (preg_match($regPhone, $_POST['phoneNumber'])) {
+            $users->phoneNumber = htmlspecialchars($_POST['phoneNumber']);
         } else {
             $formError['phoneNumber'] = 'Le numero de téléphone n\'est pas correcte';
         }

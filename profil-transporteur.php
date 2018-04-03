@@ -11,8 +11,11 @@ include_once 'controllers/profil-transporteurController.php';
             <img src="assets/img/hauliersPictures/pic2.JPG" class="img-thumbnail" alt="photoId" > 
         </div>
         <div class="col-md-offset-1 col-md-2 ">
-            <p> <?= $hauliers->name ?></p>        
-            <p><?= $hauliers->phoneNumber ?></p>                 
+            <p> <?= $hauliersList->name ?></p>        
+            <p><?= $hauliersList->phoneNumber ?></p> 
+            <p><a class="btn-md" href="transporteurs.php?transporteursId=<?= $hauliersList->id ?>">Liste des transporteurs</a></p>
+            <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
+            <p> <button type="button" class="btn btn-info">Supprimer</button> </p>
         </div>
         </div>
     </div>

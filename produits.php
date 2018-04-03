@@ -8,10 +8,11 @@ include_once 'controllers/produitsController.php';
     <div class="container">
         <div class="row">
             <?php foreach ($productsDetailsList as $productsDetails) { ?>
-            <div class="col-md-2"><a href="profil-camion.php"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="camion" ></a> </div>
+            <div class="col-md-2"><a href="#"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="" ></a> </div>
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $productsDetails->name ?></h1>
                     <p><?= $productsDetails->publicationDate ?></p>
+                    <p><?= $productsDetails->imageLink ?></p>
                     <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil</a></p>
                     <div class="list-enquiry">
                         <ul>
@@ -23,10 +24,11 @@ include_once 'controllers/produitsController.php';
                 </div>
             <?php } ?>  
             <?php foreach ($productsDetailsList as $productsDetails) { ?>
-            <div class="col-md-2"><a href="profil-camion.php"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="camion" ></a> </div>
+            <div class="col-md-2"><a href="#"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="" ></a> </div>
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $productsDetails->name ?></h1>
                     <p><?= $productsDetails->publicationDate ?></p>
+                    <p><?= $productsDetails->imageLink ?></p>
                     <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil</a></p>
                     <div class="list-enquiry">
                         <ul>

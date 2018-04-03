@@ -9,6 +9,7 @@ class users extends dataBase {
     public $email = '';
     public $phoneNumber = '';
     public $password = '';
+    public $activityDescription = '';
     public $idCommunes = '';
 
     public function __construct() {
@@ -70,6 +71,31 @@ class users extends dataBase {
             $profilUserList = $profilUser->fetch(PDO::FETCH_OBJ);
         }
         return $profilUserList;
+    }
+
+    public function modifyUser() {
+        $query = 'UPDATE `piupiu_users` SET `lastName`= :lastName,`firstName`= :firstName,`phoneNumber`= :phoneNumber,`email`= :email WHERE id = :id';
+        $user = $this->db->prepare($query);
+        $user->bindValue(':lastName', $this->lastName, PDO::PARAM_STR);
+        $user->bindValue(':firstName', $this->firstName, PDO::PARAM_STR);
+        $user->bindValue(':phoneNumber', $this->phoneNumber, PDO::PARAM_STR);
+        $user->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $user->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $user->execute();
+    }
+    public function deleteUserProfil(){
+        $queryUser = 'DELETE FROM `piupiu_users` WHERE `id` = :id';
+        $deleteUser = $this->db->prepare($queryUser);
+                $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
+                $deleteUser->execute();
+    }
+
+    public function modifyPassword() {
+        $query = 'UPDATE `piupiu_users` SET `password`= :password WHERE `id` = :id';
+        $user = $this->db->prepare($query);
+        $user->bindValue(':password', $this->password, PDO::PARAM_STR);
+        $user->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $user->execute();
     }
 
     public function __destruct() {

@@ -12,7 +12,7 @@ include_once 'controllers/transporteursController.php';
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $hauliers->name ?></h1>
                     <p><?= $hauliers->phoneNumber ?></p>
-                    <p><a href="profil-transporteurs.php?transporteursId=<?= $hauliers->id ?>">Profil</a></p>
+                    <p><a href="profil-transporteur.php?hauliersId=<?= $hauliers->id ?>">Profil</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>
@@ -27,7 +27,7 @@ include_once 'controllers/transporteursController.php';
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $hauliers->name ?></h1>
                     <p><?= $hauliers->phoneNumber ?></p>
-                    <p><a href="profil-transporteur.php?transporteursId=<?= $hauliers->id ?>">Profil</a></p>
+                    <p><a href="profil-transporteur.php?hauliersId=<?= $hauliers->id ?>">Profil</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>

@@ -1,3 +1,4 @@
+
 <?php include 'header.php' ?>
 <?php
 include_once 'models/database.php';
@@ -13,7 +14,7 @@ include_once 'controllers/camionsController.php';
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $trucks->name ?></h1>
                     <p><?= $trucks->volume ?></p>
-                    <p><a class="btn-md" href="profil-camions.php?camionsId=<?= $trucks->id ?>">Profil</a></p>
+                    <p><a class="btn-md" href="profil-camion.php?trucksId=<?= $trucks->id ?>">Profil</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>
@@ -28,7 +29,7 @@ include_once 'controllers/camionsController.php';
                 <div class="col-md-4 home-list-pop-desc inn-list-pop-desc"> 
                         <h1><?= $trucks->name ?></h1>
                     <p><?= $trucks->volume ?></p>
-                    <p><a class="btn-md" href="profil-camion.php?camionsId=<?= $trucks->id ?>">Profil</a></p>
+                    <p><a class="btn-md" href="profil-camion.php?trucksId=<?= $trucks->id ?>">Profil camion</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>

@@ -14,57 +14,123 @@ include_once 'controllers/profilUserController.php';
         <img src="assets/img/img_profil_user/orange.jpg" alt="" class="img-responsive">
     </div>
     <div class="col-xs-10 col-lg-10 col-md-10">
-        <form class="form-horizontal">
+        <form action="#" method="POST" class="form-horizontal">
             <fieldset>
-                <legend>Profil/.../</legend>
-                <div class="form-group">
-                    <label for="lastName" class="col-lg-2 control-label <?= isset($formError['lastName']) ? 'inputError' : '' ?>">Prénom : </label>
+                <legend>Modifier les informations de l'utilisateur</legend>
+                <div class="form-group ">
+                    <label for="lastName" class="col-lg-2 control-label <?= isset($formError['lastName']) ? 'inputError' : '' ?>">Prénom</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="lastName" value="<?= $userDetails->lastName ?>" placeholder="Prénom" />
+                        <input type="text" class="form-control" name="lastName" value="<?= $usersList->lastName ?>" placeholder="Prénom" />
+
+                    </div>
+                </div>              
+                <div class="form-group ">
+                    <label for="firstName" class="col-lg-2 control-label <?= isset($formError['firstName']) ? 'inputError' : '' ?>">Nom</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="firstName" value="<?= $usersList->firstName ?>" placeholder="Nom" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="firstName" class="col-lg-2 control-label <?= isset($formError['firstName']) ? 'inputError' : '' ?>">Nom : </label>
+                <div class="form-group ">
+                    <label for="telephone" class="col-lg-2 control-label <?= isset($formError['phoneNumber']) ? 'inputError' : '' ?>">Téléphone</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="lastName" value="<?= $userDetails->firstName ?>" placeholder="Nom" />
+                        <input type="tel" class="form-control" name="phoneNumber" value="<?= $usersList->phoneNumber ?>" placeholder="Téléphone" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="telephone" class="col-lg-2 control-label <?= isset($formError['phoneNumber']) ? 'inputError' : '' ?>">Téléphone : </label>
+                <div class="form-group ">
+                    <label for="email" class="col-lg-2 control-label <?= isset($formError['email']) ? 'inputError' : '' ?>">Adresse email</label>
                     <div class="col-lg-10">
-                        <input type="tel" class="form-control" name="telephone" value="<?= $userDetails->phoneNumber ?>" placeholder="Téléphone" />
+                        <input type="email" class="form-control" name="email" value="<?= $usersList->email ?>" placeholder="Email" />
                     </div>
                 </div>
+
+
                 <div class="form-group">
-                    <label for="email" class="col-lg-2 control-label <?= isset($formError['email']) ? 'inputError' : '' ?>">Adresse email : </label>
-                    <div class="col-lg-10">
-                        <input type="email" class="form-control" name="email" value="<?= $userDetails->email ?>" placeholder="Email" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="idCommunes" class="col-lg-2 control-label <?= isset($formError['communeName']) ? 'inputError' : '' ?>">Communes : </label>
+                    <label for="idCommunes" class="col-lg-2 control-label <?= isset($formError['communeName']) ? 'inputError' : '' ?>">Communes</label>
                     <div class="col-lg-10">
                         <select name="idCommunes" class="form-control" id="select">
-
                             <option disabled selected>Choisissez votre commune</option>
                             <?php foreach ($communesList as $commune) { ?>
-                                <!--Avec le foreach j'affiche dans le select la liste de mes communes y compris avec les ajouts automatiques-->
+                                Avec le foreach j'affiche dans le select la liste de mes communes y compris avec les ajouts automatiques
                                 <option value="<?= $commune->id ?>"><?= $commune->name ?> </option>
                             <?php } ?>                
                         </select>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="reset" class="btn btn-default">Modifier</button>
-                        <button type="submit" class="btn btn-default">Envoyer</button>
+                        <p><input name="modifyUser" type="submit" value="Valider" /></p>
                     </div>
                 </div>
             </fieldset>
         </form>
+
+    </div>
+    <p class="formValid">
+        <?php
+        //Si l'envoi des infos est réussi, on anvoie un message
+        if ($insertSuccess) {
+            echo 'Envoi réussi !';
+        }
+        ?>
+    </p>
+    <div>
+        <?php foreach ($formError as $Error) { ?>
+            <!--Sinon un message d'erreur-->
+            <p><?= $Error ?></p>
+        <?php } ?>
     </div>
 </div>
-<hr class="hr"/>
+
+<hr class="hr1"/>
+
+<div class="row modal1">
+    <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12   modal2">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Modification du mot de passe</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!--                        <h4 class="modal-title">Modal Header</h4>-->
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="POST" class="form-horizontal form1">
+                            <fieldset>
+                                <legend>Modification du mot de passe</legend>
+                                <div class="form-group <?= isset($formError['modifyPassword']) ? 'has-error' : '' ?>">
+                                    <label for="modifyPassword" class="col-lg-2 control-label <?= isset($formError['modifyPassword']) ? 'inputError' : '' ?>">Mot de passe</label>
+                                    <div class="col-lg-10">
+                                        <input type="password" class="form-control" name="modifyPassword" value="<?= !empty($_POST['modifyPassword']) ? $_POST['modifyPassword'] : '' ?>" placeholder="Mot de passe" />
+                                    </div>
+                                </div>
+                                <div class="form-group <?= isset($formError['passwordConfirm']) ? 'has-error' : '' ?>">
+                                    <label for="passwordConfirm" class="col-lg-2 control-label <?= isset($formError['passwordConfirm']) ? 'inputError' : '' ?>">Confirmez le mot de passe</label>
+                                    <div class="col-lg-10">
+                                        <input type="password" class="form-control" name="passwordConfirm" value="<?= !empty($_POST['passwordConfirm']) ? $_POST['passwordConfirm'] : '' ?>" placeholder="Confirmation de mot de passe" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <p><input name="modifyPasswordValidate" type="submit" value="Valider" /></p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hr1"/>
+
 <div class="row activity">
     <div class="col-xs-12 col-lg-2 col-sm-2 col-md-2 ">
         <img src="assets/img/img_profil_user/coq.jpg" alt="" class="img-responsive">
@@ -101,7 +167,6 @@ include_once 'controllers/profilUserController.php';
                 <?php foreach ($hauliersList as $haulier) { ?>
                     <tr class="info">
                         <td><?= $haulier->name; ?></td>
-
                         <td><a class="btn btn-secondary" href="profil-transporteur.php?id=<?= $haulier->id; ?>">Voir les infos</a></td>
                     </tr>
                 <?php } ?>
@@ -112,7 +177,7 @@ include_once 'controllers/profilUserController.php';
 <hr class="hr"/>
 <div class="row activity">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h4>Liste des camions</h4>
+        <h4>Liste et spécificités des camions</h4>
         <table border="2" class="table table-striped table-hover">
             <thead>
                 <tr>                   
@@ -150,5 +215,14 @@ include_once 'controllers/profilUserController.php';
         </form>
     </div>
 </div>
+<hr class="hr1"/>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <form action="#" method="POST" >
+            <button name="deleteUserProfil" type="submit" value="Valider" class="btn btn-info btn-lg">Suppression du profil d'utilisateur</button> 
+        </form>
+    </div>
+</div>
+<hr class="hr1"/>
 <?php include 'footer.php'; ?>  
 

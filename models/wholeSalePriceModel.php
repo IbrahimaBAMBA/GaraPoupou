@@ -26,10 +26,10 @@ class wholeSalePrice extends dataBase {
                 . 'INNER JOIN `piupiu_wholesalePrices` AS wspri ON wspri.`idCommunes` = com.`id` '
                 . 'LEFT JOIN `piupiu_productDetails` AS prod ON wspri.`id` = prod.`idWholeSalePrice` '
                 . 'WHERE wspri.id = 1';
-        $wholeSalePriceResult = $this->db->prepare($query);
-        $wholeSalePriceResult->bindValue(':id', $this->id, PDO::PARAM_INT);
-        if ($wholeSalePriceResult->execute()) {
-            $wholeSalePriceList = $wholeSalePriceResult->fetchAll(PDO::FETCH_OBJ);
+        $wholeSalePrice = $this->db->prepare($query);
+        $wholeSalePrice->bindValue(':id', $this->id, PDO::PARAM_INT);
+        if ($wholeSalePrice->execute()) {
+            $wholeSalePriceList = $wholeSalePrice->fetchAll(PDO::FETCH_OBJ);
         }
         return $wholeSalePriceList;
     }

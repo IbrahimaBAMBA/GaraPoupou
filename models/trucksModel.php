@@ -12,17 +12,19 @@ class trucks extends dataBase {
     public $name = '';
     public $volume = '';
     public $idHauliers = '';
+    public $idCommunes = '';
+    public $imageLink = '';
 
     public function getTrucksList() {
         $trucksList = array();
-        $query = 'SELECT `id`, `name`, `volume`, `idHauliers` FROM `piupiu_trucks`';
+        $query = 'SELECT `id`, `name`, `volume`, `imageLink`, `idCommunes`, `idHauliers` FROM `piupiu_trucks`';
         $trucksResult = $this->db->query($query);
         $trucksList = $trucksResult->fetchAll(PDO::FETCH_OBJ);
         return $trucksList;
     }
 
     public function getTrucksById() {
-        $query = 'SELECT `id`, `name`, `volume`, `idHauliers` FROM `piupiu_trucks` WHERE `id` = :id';
+        $query = 'SELECT `id`, `name`, `volume`,  `imageLink`, `idCommunes`, `idHauliers` FROM `piupiu_trucks` WHERE `id` = :id';
         $trucksResult = $this->db->prepare($query);
         $trucksResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         $trucksResult->execute();

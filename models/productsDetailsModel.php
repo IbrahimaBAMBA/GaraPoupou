@@ -10,6 +10,7 @@ class productsDetails extends dataBase {
 
     public $id = 0;
     public $name = '';
+    public $imageLink = '';
     public $publicationDate = '';
     public $idProductTypes = '';
 
@@ -20,7 +21,7 @@ class productsDetails extends dataBase {
 // afficher la liste des produits
     public function getProductsDetailsList() {
         $productsList = array();
-        $query = 'SELECT `id`, `name`, `publicationDate`, `idProductTypes` FROM `piupiu_productDetails`';
+        $query = 'SELECT `id`, `name`, `publicationDate`, `imageLink`, `idProductTypes` FROM `piupiu_productDetails`';
         $productsDetailsResult = $this->db->query($query);
         $productsDetailsList = $productsDetailsResult->fetchAll(PDO::FETCH_OBJ);
         return $productsDetailsList;
@@ -29,7 +30,7 @@ class productsDetails extends dataBase {
 // afficher le profil d'un produit
 
     public function getProductsDetailsById() {
-        $query = 'SELECT `id`, `name`, `publicationDate`, `idProductTypes` FROM `piupiu_productDetails` WHERE `id` = :id';
+        $query = 'SELECT `id`, `name`, `publicationDate`,`imageLink`, `idProductTypes` FROM `piupiu_productDetails` WHERE `id` = :id';
         $productsDetailsResult = $this->db->prepare($query);
         $productsDetailsResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         $productsDetailsResult->execute();
@@ -41,7 +42,7 @@ class productsDetails extends dataBase {
 
     public function getProductsDetailsByIdProductDetails() {
         $queryResult = array();
-        $query = 'SELECT `id`, `name`, `image`, `publicationDate`, `idProductTypes` FROM `piupiu_productDetails` `idProductDetails` = :idProductDetails';
+        $query = 'SELECT `id`, `name`, `image`, `publicationDate`, `imageLink`, `idProductTypes` FROM `piupiu_productDetails` `idProductDetails` = :idProductDetails';
         $queryExecute = $this->db->prepare($query);
         $queryExecute->bindValue(':idProductDetails', $this->idProductDetails, PDO::PARAM_INT);
         if ($queryExecute->execute()) {
