@@ -1,5 +1,7 @@
 <?php
-include 'header.php';
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 include_once 'models/database.php';
 include_once 'models/usersModel.php';
 include_once 'models/exploitationsModel.php';
@@ -7,6 +9,13 @@ include_once 'models/hauliersModel.php';
 include_once 'models/communesModel.php';
 include_once 'models/trucksModel.php';
 include_once 'controllers/profilUserController.php';
+include 'header.php';
+?>
+<?php 
+if (!isset($_SESSION['lastName'])){
+      header ('location: connexion.php');
+      exit;
+}
 ?>
 <hr class="hr"/>
 <div class="row idUser">

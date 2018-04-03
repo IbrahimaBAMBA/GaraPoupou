@@ -87,7 +87,8 @@ class users extends dataBase {
         $queryUser = 'DELETE FROM `piupiu_users` WHERE `id` = :id';
         $deleteUser = $this->db->prepare($queryUser);
                 $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
-                $deleteUser->execute();
+                return $deleteUser->execute();
+                
     }
 
     public function modifyPassword() {

@@ -9,7 +9,6 @@
  */
 //if (isset($_GET['id'])) {
 $wholeSalePrice = new wholeSalePrice();
-$wholeSalePrice->id = $_GET['id'];
 $wholeSalePriceList = $wholeSalePrice->getWholeSalePriceList();
 //}
 

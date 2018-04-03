@@ -130,6 +130,12 @@ if (isset($_GET['id'])) {
 if (isset($_POST['deleteUserProfil'])) {
     $deleteUser = new users();
      $deleteUser->id = $_SESSION['id'];
-    $deleteUserList = $deleteUser->deleteUserProfil();
+    if($deleteUser->deleteUserProfil()){
+        session_unset();
+        session_destroy();
+        header('Location: ../index.php');
+        exit;
+    } else {
+    }
     
 }

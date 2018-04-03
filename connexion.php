@@ -4,6 +4,7 @@ include_once 'models/usersModel.php';
 include_once 'controllers/connexionController.php';
 include_once 'header.php';
 ?>
+
 <form class="form-horizontal" action="#" method="POST">
     <?= isset($formError['connection']) ? $formError['connection'] : '' ?>
     <fieldset>
@@ -29,4 +30,10 @@ include_once 'header.php';
         </div>
     </fieldset>
 </form>
+<div class="row">
+    <div class="col-sm-12">
+        <p>Pas encore inscrit, inscrit toi <a href="inscription.php">ICI</a></p>
+        
+    </div>
+</div>
 <?php include 'footer.php'; ?>

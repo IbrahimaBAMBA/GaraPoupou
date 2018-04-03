@@ -1,4 +1,10 @@
 <?php include 'header.php' ?>
+<?php 
+if (!isset($_SESSION['lastName'])){
+      header ('location: connexion.php');
+      exit;
+}
+?>
 <?php
 include_once 'models/database.php';
 include_once 'models/hauliersModel.php';
