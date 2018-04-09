@@ -46,7 +46,7 @@ include_once 'controllers/inscriptionController.php';
                     <input type="password" class="form-control" name="passwordConfirm" value="<?= !empty($_POST['passwordConfirm']) ? $_POST['passwordConfirm'] : '' ?>" placeholder="Confirmation de mot de passe" />
                 </div>
             </div>
-            <div class="form-group ">
+<!--            <div class="form-group ">
                 <label for="idCommunes" class="col-lg-2 control-label <?= isset($formError['idCommunes']) ? 'inputError' : '' ?>">Communes</label>
                 <div class="col-lg-10">
                     <select name="idCommunes" class="form-control" id="select">
@@ -57,7 +57,7 @@ include_once 'controllers/inscriptionController.php';
                         <?php } ?>                
                     </select>
                 </div>
-            </div>
+            </div>-->
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button type="submit" class="btn btn-primary" name="submit">Valider</button>

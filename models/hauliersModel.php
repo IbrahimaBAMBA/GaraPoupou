@@ -28,13 +28,25 @@ class hauliers extends dataBase {
         $hauliersList = $hauliersResult->fetch(PDO::FETCH_OBJ);
         return $hauliersList;
     }
-     public function getHaulierByIdUsers() {
+
+    public function getHaulierByIdUsers() {
         $query = 'SELECT `id`, `name`, `phoneNumber` FROM `piupiu_hauliers` WHERE `idUsers` = :idUsers';
         $idUserHaulier = $this->db->prepare($query);
         $idUserHaulier->bindValue(':idUsers', $this->idUsers, PDO::PARAM_INT);
         $idUserHaulier->execute();
         $idUserHaulierList = $idUserHaulier->fetchAll(PDO::FETCH_OBJ);
         return $idUserHaulierList;
+    }
+
+    //Insérer les informations d'un camion
+    public function addHaulierAnnonce() {
+        $query = 'INSERT INTO `piupiu_hauliers`(`name`, `phoneNumber`, `idUsers`) VALUES (:name,:phoneNumber,:idUsers)';
+        $addHauliers = $this->db->prepare($query);
+        $addHauliers->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $addHauliers->bindValue(':phoneNumber', $this->phoneNumber, PDO::PARAM_INT);
+        $addHauliers->bindValue(':idUsers', $this->idUsers, PDO::PARAM_INT);
+        //Si l'insertion s'est correctement déroulée on retourne vrai
+        return $addHauliers->execute();
     }
 
     public function __destruct() {

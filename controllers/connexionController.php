@@ -1,4 +1,4 @@
-<!--Controller de la connection-->
+
 <?php
 $regemail = '#[A-Z-a-z-0-9-.éàèîÏôöùüûêëç]{2,}@[A-Z-a-z-0-9éèàêâùïüëç]{2,}[.][a-z]{2,6}$#';
 $insertSuccess = false;

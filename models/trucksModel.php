@@ -15,6 +15,10 @@ class trucks extends dataBase {
     public $idCommunes = '';
     public $imageLink = '';
 
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function getTrucksList() {
         $trucksList = array();
         $query = 'SELECT `id`, `name`, `volume`, `imageLink`, `idCommunes`, `idHauliers` FROM `piupiu_trucks`';
@@ -48,8 +52,17 @@ class trucks extends dataBase {
         return $trucksList;
     }
 
-    public function __construct() {
-        parent::__construct();
+//Insérer une annonce pour un camion
+    public function addTruckAnnonce() {
+        $query = 'INSERT INTO `piupiu_trucks`(`name`, `volume`, `imageLink`, `idHauliers`, `idCommunes`) VALUES (:name,:volume,:imageLink,:idHauliers,:idCommunes)';
+        $addTrucks = $this->db->prepare($query);
+        $addTrucks->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $addTrucks->bindValue(':volume', $this->volume, PDO::PARAM_STR);
+        $addTrucks->bindValue(':imageLink', $this->imageLink, PDO::PARAM_STR);
+        $addTrucks->bindValue(':idHauliers', $this->idHauliers, PDO::PARAM_INT);
+        $addTrucks->bindValue(':idCommunes', $this->idCommunes, PDO::PARAM_INT);
+        //Si l'insertion s'est correctement déroulée on retourne vrai
+        return $addTrucks->execute();
     }
 
     public function __destruct() {

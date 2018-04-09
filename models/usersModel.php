@@ -15,7 +15,7 @@ class users extends dataBase {
     public function __construct() {
         parent::__construct();
     }
-
+//Pour l'insertion de mon utilisateur dans ma base de données'
     public function addUsers() {
         $query = 'INSERT INTO `piupiu_users` (`lastName`, `firstName`, `phoneNumber`, `email`, `password`, `idCommunes`) VALUES (:lastName, :firstName, :phoneNumber, :email, :password, :idCommunes)';
         $responseRequest = $this->db->prepare($query);
@@ -59,7 +59,7 @@ class users extends dataBase {
         }
         return $resultRequest;
     }
-
+//Pour recuperer les information d'un utilisateur par son id'
     public function getProfilUserById() {
         $profilUserList = array();
         $query = 'SELECT `piupiu_users`.`lastName`, `piupiu_users`.`firstName`, `piupiu_users`.`phoneNumber`, `piupiu_users`.`email` '
@@ -72,7 +72,7 @@ class users extends dataBase {
         }
         return $profilUserList;
     }
-
+//Pour modifier les informations d'un utilisateur'
     public function modifyUser() {
         $query = 'UPDATE `piupiu_users` SET `lastName`= :lastName,`firstName`= :firstName,`phoneNumber`= :phoneNumber,`email`= :email WHERE id = :id';
         $user = $this->db->prepare($query);
@@ -83,6 +83,7 @@ class users extends dataBase {
         $user->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $user->execute();
     }
+//    Pour supprimer le profil d'un utilisateur'
     public function deleteUserProfil(){
         $queryUser = 'DELETE FROM `piupiu_users` WHERE `id` = :id';
         $deleteUser = $this->db->prepare($queryUser);
@@ -90,7 +91,7 @@ class users extends dataBase {
                 return $deleteUser->execute();
                 
     }
-
+//Pour modifier le mot de passe d'un utilisateur'
     public function modifyPassword() {
         $query = 'UPDATE `piupiu_users` SET `password`= :password WHERE `id` = :id';
         $user = $this->db->prepare($query);
