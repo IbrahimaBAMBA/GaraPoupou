@@ -20,7 +20,7 @@ class productsDetails extends dataBase {
 
 // afficher la liste des produits
     public function getProductsDetailsList() {
-        $productsList = array();
+        $productsDetailsList = array();
         $query = 'SELECT `id`, `name`, `publicationDate`, `imageLink`, `idProductTypes` FROM `piupiu_productDetails`';
         $productsDetailsResult = $this->db->query($query);
         $productsDetailsList = $productsDetailsResult->fetchAll(PDO::FETCH_OBJ);
@@ -30,11 +30,12 @@ class productsDetails extends dataBase {
 // afficher le profil d'un produit
 
     public function getProductsDetailsById() {
+        $productsDetailsList = array();
         $query = 'SELECT `id`, `name`, `publicationDate`,`imageLink`, `idProductTypes` FROM `piupiu_productDetails` WHERE `id` = :id';
-        $productsDetailsResult = $this->db->prepare($query);
-        $productsDetailsResult->bindValue(':id', $this->id, PDO::PARAM_INT);
-        $productsDetailsResult->execute();
-        $productsDetailsList = $productsDetailsResult->fetch(PDO::FETCH_OBJ);
+        $productsDetails = $this->db->prepare($query);
+        $productsDetails->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $productsDetails->execute();
+        $productsDetailsList = $productsDetails->fetch(PDO::FETCH_OBJ);
         return $productsDetailsList;
     }
 

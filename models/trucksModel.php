@@ -26,7 +26,7 @@ class trucks extends dataBase {
         $trucksList = $trucksResult->fetchAll(PDO::FETCH_OBJ);
         return $trucksList;
     }
-
+//affichage profil camion
     public function getTrucksById() {
         $query = 'SELECT `id`, `name`, `volume`,  `imageLink`, `idCommunes`, `idHauliers` FROM `piupiu_trucks` WHERE `id` = :id';
         $trucksResult = $this->db->prepare($query);

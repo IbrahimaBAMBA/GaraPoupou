@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="icon" href="assets/img/favicon2.png">
+        <link rel="stylesheet" href="animate.min.css">
         <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,7 +31,7 @@
                 <!-- affiche les liens de la nav -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Accueil</a></li>
+                        <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle  btn btn-info btn-sm" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exploitations <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -42,7 +43,7 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="annonces.php">Ajouter une exploitation</a></li>
+                                    <li><a href="profil-exploitation.php">Ajouter une exploitation</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Ajouter une annonce</a></li>
                                 <li role="separator" class="divider"></li>
@@ -60,7 +61,7 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="annonces.php">Ajouter une société de transport</a></li>
+                                    <li><a href="profil-transporteur.php">Ajouter une société de transport</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Ajouter une annonce</a></li>
                                 <li role="separator" class="divider"></li>
@@ -78,7 +79,7 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="annonces.php">Ajouter un camion</a></li>                               
+                                    <li><a href="profil-camion.php">Ajouter un camion</a></li>                               
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Ajouter une annonce</a></li>                              
                                 <li role="separator" class="divider"></li>
@@ -96,7 +97,7 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="annonces.php">Ajouter un produit</a></li>
+                                    <li><a href="profil-produit.php">Ajouter un produit</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Ajouter une annonce</a></li>                              
                                 <li role="separator" class="divider"></li>
@@ -107,14 +108,14 @@
                     </ul>
                     <?php if (isset($_SESSION['id'])) { ?>
                         <ul class="nav navbar-nav navbar-right">                      
-                            <li></span>Bon retour parmi nous, <a href="profiluser.php?id=<?= $_SESSION['id'] ?>"><?= $_SESSION['firstName'] ?>!</a></li>
-                            <li><a href="deconnexion.php"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Déconnexion</a></li>
+                            <li><a href="profiluser.php?id=<?= $_SESSION['id'] ?>"class="btn btn-info btn-md "><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Bon retour parmi nous <strong><?= $_SESSION['firstName'] ?></strong> !</a></li>
+                            <li><a href="deconnexion.php"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Déconnexion</a></li>
 
                         </ul>
                     <?php } else { ?>
                         <ul class="nav navbar-nav navbar-right">                      
-                            <li><a href="inscription.php" class=" btn btn-info btn-md"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Inscription</a></li>
-                            <li><a href="connexion.php" class=" btn btn-info btn-md"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Connexion</a></li>
+                            <li><a href="inscription.php" class=" btn btn-info btn-md"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Inscription</a></li>
+                            <li><a href="connexion.php" class=" btn btn-info btn-md"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Connexion</a></li>
                         </ul>
                     <?php } ?>
                 </div><!-- /.navbar-collapse -->
