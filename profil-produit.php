@@ -16,19 +16,19 @@ include_once 'models/productsDetailsModel.php';
 include_once 'controllers/profil-produitController.php';
 ?>
 <div id="profilVegetableProduct" class="container">
-    <div  class="row text-aligne">
-        <div class="infoVegetableProduct">
-        <div class="col-md-offset-1 col-md-2 ">
-            <img src="assets/img/hauliersPictures/pic2.JPG" class="img-thumbnail" alt="photoId" > 
+    <div  class="row infoVegetableProduct">
+        
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-2">
+            <img src="#" class="img-thumbnail" alt="" > 
         </div>
-        <div class="col-md-offset-1 col-md-2 ">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-offset-1 col-lg-9">
             <p> <?= $productsDetails->name ?></p>        
-            <p><?= $productsDetails->publicationDate ?></p> 
-            <p><a class="btn-md" href="produits.php?produitsId=<?= $productsDetails->id ?>">Liste des produits</a></p>
-            <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
-            <p> <button type="button" class="btn btn-info">Supprimer</button> </p>
+            <p><?= $productsDetails->publicationDate ?></p>                  
+            <p> <button type="button" class="btn btn-info">Supprimer</button>
+                <button type="button" class="btn btn-info">Modifier</button>
+                <a class="btn-md" href="produits.php?produitsId=<?= $productsDetails->id ?>">Liste des produits</a></p>
         </div>
-        </div>
+      
     </div>
 </div>
 

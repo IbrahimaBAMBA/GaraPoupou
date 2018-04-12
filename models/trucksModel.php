@@ -53,7 +53,7 @@ class trucks extends dataBase {
     }
 
 //Insérer une annonce pour un camion
-    public function addTruckAnnonce() {
+    public function addTruckAnnouncement() {
         $query = 'INSERT INTO `piupiu_trucks`(`name`, `volume`, `imageLink`, `idHauliers`, `idCommunes`) VALUES (:name,:volume,:imageLink,:idHauliers,:idCommunes)';
         $addTrucks = $this->db->prepare($query);
         $addTrucks->bindValue(':name', $this->name, PDO::PARAM_STR);

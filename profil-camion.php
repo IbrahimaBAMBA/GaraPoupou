@@ -15,30 +15,50 @@ include_once 'models/database.php';
 include_once 'models/trucksModel.php';
 include_once 'controllers/profil-camionController.php';
 ?>
-
-<div  id="profilTrucks" class="row text-aligne">
-    <div class="infoTrucks">
-        <div class="col-xs-12 col-sm-4 col-lg-1 col-md-offset-1 col-md-2 ">
-            <img src="assets/img/hauliersPictures/pic2.JPG" class="img-thumbnail" alt="photoId" > 
+<!--<div  id="profilTrucks" class="row text-aligne">
+    
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-offset-1 col-lg-2 infoTrucks">
+            <img src="#" class="img-thumbnail" alt="photoId" > 
         </div>
-        <div class="col-md-offset-1 col-md-2 ">         
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 ">         
             <p> <?= $trucks->name ?></p>        
             <p><?= $trucks->imageLink ?></p>                 
             <p><?= $trucks->volume ?></p> 
             <p><a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>
             <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
             <p> <button type="button" class="btn btn-info">Supprimer</button> </p> 
-            <form class="form-horizontal well col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" action="upload.php" method="POST" enctype="multipart/form-data">
-                <label for="fileToUpload" class="col-lg-2 control-label">Ajouter une image</label>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <div class="form-group ">
-                    <label for="textArea" class="col-lg-2 control-label"></label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
-                        <span class="help-block">Decrivez en quelques mots vos activités.</span>
-                    </div>
-                </div>
-            </form>
+        </div>   
+</div>-->
+
+<!--<div id="profilTrucks"  class="container">
+    <div  class="row text-aligne">
+        <div class="infoTrucks">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-offset-1 col-lg-2 ">
+                <img src="#" class="img-thumbnail" alt="" > 
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-offset-1 col-lg-10 ">
+                <p> <?= $trucks->name ?></p>        
+                <p><?= $trucks->imageLink ?></p>                 
+                <p><?= $trucks->volume ?></p> 
+                <p><a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>
+                <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
+                <p> <button type="button" class="btn btn-info">Supprimer</button> </p>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div id="profilTrucks" class="container">
+    <div class="row infoTrucks">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-2">
+            <img src="#" class="img-thumbnail" alt="" >  
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-offset-1 col-lg-9">
+            <p> <?= $trucks->name ?></p>        
+            <p><?= $trucks->imageLink ?></p>                 
+            <p><?= $trucks->volume ?></p>            
+            <p> <button type="button" class="btn btn-info">Modifier</button>
+                <button type="button" class="btn btn-info">Supprimer</button> 
+                <a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>                           
         </div>
     </div>
 </div>

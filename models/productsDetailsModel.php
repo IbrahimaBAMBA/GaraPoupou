@@ -54,7 +54,7 @@ class productsDetails extends dataBase {
     }
 
     //Insérer les informations d'une annonce de produit
-    public function addProductAnnonce() {
+    public function addProductAnnouncement() {
         $query = 'INSERT INTO `piupiu_productDetails`(`name`, `imageLink`, `publicationDate`, `idProductTypes`) VALUES (:name,:imageLink,:publicatioDate,:idProductTypes)';
         $addProducts = $this->db->prepare($query);
         $addProducts->bindValue(':name', $this->name, PDO::PARAM_STR);

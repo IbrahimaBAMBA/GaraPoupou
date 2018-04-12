@@ -1,3 +1,5 @@
+
+
 /*Debut de la navbar*/
 .navbar  {
     background-color: #16a085;
@@ -39,12 +41,12 @@ label{
     text-align: center;
 }
 .modal1{
-   border: 1px solid #EB9532;
+    border: 1px solid #EB9532;
     border-radius: 5px;
     text-align: center; 
 }
 .modal2{
-   border: 1px solid #D35400;
+    border: 1px solid #D35400;
     border-radius: 10px;
     text-align: center; 
 }
@@ -73,19 +75,20 @@ h2, h3, h4{
     text-align: center;
     font-family: Helvetica;
 }
+/*Section article*/
 #flash{
     padding: auto;
     background-color:#e6fff2;
     display: inline-block;
     height: 350px;
 }
-body{
+/*body{
     background-color: #68C3A3;
-    /*   background-image: url(../img/img.jpg);
+       background-image: url(../img/img.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover;*/
-}
+        background-size: cover;
+}*/
 /*Debut du flash info*/
 #flashinfo{
     background-color: #EEEEEE;
@@ -94,7 +97,7 @@ body{
     text-align: center;
 }
 .back{
-  font-family: serif;  
+    font-family: serif;  
 }
 /*Defilement de texte*/
 .back {
@@ -125,21 +128,21 @@ body{
     margin-bottom: 0;
     padding: 0 40px 30px 40px;
 }
- Reposition the controls slightly 
+Reposition the controls slightly 
 .carousel-control {
     left: -12px;
 }
 .carousel-control.right {
     right: -12px;
 }
- Changes the position of the indicators 
+Changes the position of the indicators 
 .carousel-indicators {
     right: 50%;
     top: auto;
     bottom: 0px;
     margin-right: -19px;
 }
- Changes the colour of the indicators 
+Changes the colour of the indicators 
 .carousel-indicators li {
     background: #c0c0c0;
 }
@@ -151,7 +154,7 @@ body{
 .footer-section {
     background: #019875;
     padding: 5em 0;
-    
+
 }
 
 .footer-column h4 {
@@ -179,104 +182,108 @@ body{
 }*/
 /*Debut organisation profil-transporteur*/
 #profilHauliers{
-    background-image: url(/assets/img/hauliersPictures/camion.jpg);
+    /*    background-image: url(/assets/img/hauliersPictures/camion.jpg);*/
     margin:auto;
     padding-top: 175px;
-    width: 500px;
+    width:850px;
     height: 315px;
-    border: 2px solid #013243;    
+    border: 3px solid #E87E04;    
 }
 .infoHauliers{
-    background-color: #89C4F4;
-    padding: 20px;
+    background-color: #1BA39C;
+/*    padding: 20px;
     margin: 25px;
-    height: 100px;
+    height: 100px;*/
 
 }
+/*Debut organisation vivrier*/
 #profilVegetableProduct{
     background-image: url(/assets/img/vegetableProduct/panier1.jpg);
     margin:auto;
     padding-top: 175px;
-    width: 500px;
+    width:850px;
     height: 315px;
-    border: 2px solid #013243;    
+    border: 3px solid #E87E04;  
 }
 .infoVegetableProduct{
-    background-color: #89C4F4;
-    padding: 20px;
+    background-color: #1BA39C;
+/*    padding: 20px;
     margin: 25px;
-    height: 100px; 
+    height: 100px; */
 }
+/*Debut organisation camion*/
 #profilTrucks{
-    background-image: url(/assets/img/trucksPictures/trucks1.jpg);
+
     margin:auto;
     padding-top: 175px;
-    width: 500px;
+    width:850px;
     height: 315px;
-    border: 2px solid #013243;    
+    border: 3px solid #E87E04;    
 }
 
 .infoTrucks{
-    background-color: #89C4F4;
-    padding: 20px;
-    margin: 25px;
-    height: 100px; 
+    background-color: #1BA39C;
+    /*    padding: 20px;
+        margin: 25px;
+        height: 100px; */
 }
+/*Debut organisation exploitations*/
 #profilExploitations{
     background-image: url(/assets/img/exploitationsPictures/exploitations1.jpg);
     margin:auto;
-    padding-top: 175px;
-    width: 500px;
+     padding-top: 175px;
+    width:850px;
     height: 315px;
-    border: 2px solid #013243;    
+    border: 3px solid #E87E04;    
 }
 
 .infoExploitations{
-    background-color: #89C4F4;
-    padding: 20px;
+    background-color: #1BA39C;
+/*    padding: 20px;
     margin: 25px;
-    height: 100px; 
+    height: 100px; */
 }
+/*Debut organisation ferme*/
 #profilPoultryFarm{
     background-image: url(/assets/img/poultryFarm/poultry1.jpg);
     margin:auto;
-    padding-top: 175px;
-    width: 500px;
+     padding-top: 175px;
+    width:850px;
     height: 315px;
-    border: 2px solid #013243;    
+    border: 3px solid #E87E04;    
 }
 
 .infoPoultryFarm{
-    background-color: #89C4F4;
-    padding: 20px;
+    background-color: #1BA39C;
+/*    padding: 20px;
     margin: 25px;
-    height: 100px; 
+    height: 100px; */
+}
+.infoExploitations, .infoHauliers, .infoPoultryFarm, .infoTrucks, .infoVegetableProduct a:hover, a:active {
+    background-color: #1BA39C;
+    padding: 8px 17px;
 }
 
-/*Debut affichage list*/
+
+/*Debut affichage des cours */
 .list-number li  {
     margin-right: 5px;
     margin-left: 0px;
     top: 5px;
     display:inline-block;
-    
-}
 
+}
 .list-enquiry li  {
     margin-right: 5px;
     margin-left: 0px;
     margin-bottom:5px;
     top: 15px;
     display:inline-block;
-    
+
 }
-
-/*img{width:80%;}*/
-
 .small-padding-bg {
     box-shadow: 3px 3px 5px #c2c2c2, -3px -3px 5px #c2c2c2;
 }
-
 
 section{
     padding:60px 0px;
@@ -291,44 +298,35 @@ h2 {
     margin-bottom:30px;
     font-family: 'Raleway', sans-serif;
 }
-
 p{
     font-size:13px;
 }
-
 .ion-minus{
     padding:0px 10px;
 }
-
 #blog{
-	background-color:#f6f6f6;
+    background-color:#f6f6f6;
 }
-
 #blog .carousel-indicators {
     bottom: -60px;
 }
-
 #blog .carousel-indicators li{
     background-color: #5db4c0;
     height: 13px;
     width: 13px;
     margin: 5px;
 }
-
 #blog .carousel-indicators li.active{
     background-color: #888383;
 }
-
 #blog .card-block{
     padding: 10px;
 }
-
 #blog .card{
     background-color: #FFF;
     border: 1px solid #eceaea;
     margin: 20px 0px;
 }
-
 .btn.btn-default {
     background-color: #5db4c0;
     color: #fff;
@@ -337,6 +335,10 @@ p{
     padding: 13px 20px;
     font-size: 13px;
     font-weight: 600;
+}
+/*Carte d'accessibilité'*/
+.carte{
+
 }
 
 

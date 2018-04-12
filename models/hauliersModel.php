@@ -34,12 +34,14 @@ class hauliers extends dataBase {
         $idUserHaulier = $this->db->prepare($query);
         $idUserHaulier->bindValue(':idUsers', $this->idUsers, PDO::PARAM_INT);
         $idUserHaulier->execute();
-        $idUserHaulierList = $idUserHaulier->fetchAll(PDO::FETCH_OBJ);
+        $idUserHaulierList = $idUserHaulier->fetch(PDO::FETCH_OBJ);
+//        hydratation???
+        $this->id = $idUserHaulierList->id;
         return $idUserHaulierList;
     }
 
     //Insérer les informations d'un camion
-    public function addHaulierAnnonce() {
+    public function addHaulierAnnouncement() {
         $query = 'INSERT INTO `piupiu_hauliers`(`name`, `phoneNumber`, `idUsers`) VALUES (:name,:phoneNumber,:idUsers)';
         $addHauliers = $this->db->prepare($query);
         $addHauliers->bindValue(':name', $this->name, PDO::PARAM_STR);

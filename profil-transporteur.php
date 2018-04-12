@@ -16,19 +16,19 @@ include_once 'models/hauliersModel.php';
 include_once 'controllers/profil-transporteurController.php';
 ?>
 <div id="profilHauliers" class="container">
-    <div  class="row text-aligne">
-        <div class="infoHauliers">
-        <div class="col-md-offset-1 col-md-2 ">
-            <img src="assets/img/hauliersPictures/pic2.JPG" class="img-thumbnail" alt="photoId" > 
+    <div  class="row infoHauliers">
+      
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-2">
+            <img src="#" class="img-thumbnail" alt="" > 
         </div>
-        <div class="col-md-offset-1 col-md-2 ">
+       <div class="col-xs-12 col-sm-12 col-md-7 col-lg-offset-1 col-lg-9">
             <p> <?= $hauliersList->name ?></p>        
-            <p><?= $hauliersList->phoneNumber ?></p> 
-            <p><a class="btn-md" href="transporteurs.php?transporteursId=<?= $hauliersList->id ?>">Liste des transporteurs</a></p>
-            <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
-            <p> <button type="button" class="btn btn-info">Supprimer</button> </p>
+            <p><?= $hauliersList->phoneNumber ?></p>                 
+            <p> <button type="button" class="btn btn-info">Supprimer</button>
+                <button type="button" class="btn btn-info">Modifier</button>
+                <a class="btn-md" href="transporteurs.php?transporteursId=<?= $hauliersList->id ?>">Liste des transporteurs</a></p>
         </div>
-        </div>
+       
     </div>
 </div>
 <?php include 'footer.php'; ?>

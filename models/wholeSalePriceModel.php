@@ -39,3 +39,6 @@ class wholeSalePrice extends dataBase {
     }
 
 }
+  $hauliersResult->execute();
+        $hauliersList = $hauliersResult->fetch(PDO::FETCH_OBJ);
+        return $hauliersList;

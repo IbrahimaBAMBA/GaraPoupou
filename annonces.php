@@ -29,7 +29,7 @@ include_once 'controllers/annonceController.php';
             <div class="form-group ">
                 <label for="" class="col-lg-2 control-label">Catégories</label>
                 <div class="col-lg-10">
-                    <select id="categorie" class="form-control">
+                    <select name="categorie" id="categorie" class="form-control">
                         <option disabled selected>Choisissez une catégorie</option>
                         <option id="trucks" value="trucks">Camions</option>
                         <option id="exploitations" value="exploitations">Exploitations</option>
@@ -40,11 +40,11 @@ include_once 'controllers/annonceController.php';
             </div>
             <!--            section trucks, formulaire destinée aux camions et qui est hide par defauts et que je show au click-->
             <div class = "trucks">
-                <div class="form-group <?= isset($formError['name']) ? 'has-error' : '' ?>">
-                    <label for="name" class="col-lg-2 control-label">Nom du véhicule</label>
+                <div class="form-group <?= isset($formError['nameTruck']) ? 'has-error' : '' ?>">
+                    <label for="nameTruck" class="col-lg-2 control-label">Nom du véhicule</label>
                     <div class="col-lg-10">
                         <!--                    Ici on fait en sorte de garder la valeur du champs même si on se trompe , au lieu de tout rettapper -->
-                        <input type="text" class="form-control" name="name" value="<?= !empty($_POST['name']) ? $_POST['name'] : '' ?>" placeholder="Nom du véhicule" />
+                        <input type="text" class="form-control" name="nameTruck" value="<?= !empty($_POST['nameTruck']) ? $_POST['nameTruck'] : '' ?>" placeholder="Nom du véhicule" />
                     </div>
                 </div>
                 <div class="form-group <?= isset($formError['volume']) ? 'has-error' : '' ?>">
@@ -56,7 +56,6 @@ include_once 'controllers/annonceController.php';
                 <div class="form-group">
                     <label for="monImage" class="col-lg-2 control-label ">Image à télécharger</label>
                     <div class="col-lg-10">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
                         <input type="file" name="monImage" id="fileToUpload">
                     </div>
                 </div>
@@ -71,10 +70,10 @@ include_once 'controllers/annonceController.php';
             <!--            informations pour les camions-->
             <!--            section exploitation, formulaire destinée aux exploitations et qui est hide par defauts et que je show au click-->
             <div class = "exploitations">
-                <div class="form-group <?= isset($formError['name']) ? 'has-error' : '' ?>">
-                    <label for="name" class="col-lg-2 control-label <?= isset($formError['name']) ? 'inputError' : '' ?>">Nom de votre entité</label>
+                <div class="form-group <?= isset($formError['nameExploitation']) ? 'has-error' : '' ?>">
+                    <label for="nameExploitation" class="col-lg-2 control-label <?= isset($formError['nameExploitation']) ? 'inputError' : '' ?>">Nom de votre entité</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="name" value="<?= !empty($_POST['name']) ? $_POST['name'] : '' ?>" placeholder="Nom de votre entité" />
+                        <input type="text" class="form-control" name="nameExploitation" value="<?= !empty($_POST['nameExploitation']) ? $_POST['nameExploitation'] : '' ?>" placeholder="Nom de votre entité" />
                     </div>
                 </div>
                 <div class="form-group <?= isset($formError['phoneNumber']) ? 'has-error' : '' ?>">
@@ -83,14 +82,27 @@ include_once 'controllers/annonceController.php';
                         <input type="tel" class="form-control" name="phoneNumber" value="<?= !empty($_POST['phoneNumber']) ? $_POST['phoneNumber'] : '' ?>" placeholder="Téléphone" />
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="imgExploitation" class="col-lg-2 control-label ">Image à télécharger</label>
+                    <div class="col-lg-10">
+                        <input type="file" name="imgExploitation" id="fileToUpload">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="textArea" class="col-lg-2 control-label"></label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                        <span class="help-block">Decrivez en quelques mots vos activités.</span>
+                    </div>
+                </div>
             </div>
             <!--            informations pour les exploitations-->
             <!--            section produit, formulaire destinée aux produits et qui est hide par defauts et que je show au click-->
             <div class = "pDetails">
-                <div class="form-group <?= isset($formError['name']) ? 'has-error' : '' ?>">
-                    <label for="name" class="col-lg-2 control-label <?= isset($formError['name']) ? 'inputError' : '' ?>">Nom du produit</label>
+                <div class="form-group <?= isset($formError['namePdetails']) ? 'has-error' : '' ?>">
+                    <label for="namePdetails" class="col-lg-2 control-label <?= isset($formError['namePdetails']) ? 'inputError' : '' ?>">Nom du produit</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="name" value="<?= !empty($_POST['name']) ? $_POST['name'] : '' ?>" placeholder="Nom du produit" />
+                        <input type="text" class="form-control" name="namePdetails" value="<?= !empty($_POST['namePdetails']) ? $_POST['namePdetails'] : '' ?>" placeholder="Nom du produit" />
                     </div>
                 </div>
                 <div class="form-group <?= isset($formError['publicationDate']) ? 'has-error' : '' ?>">
@@ -103,10 +115,10 @@ include_once 'controllers/annonceController.php';
             <!--informations pour les produits-->
             <!--            section transporteur, formulaire destinée aux transporteurs et qui est hide par defauts et que je show au click-->
             <div class = "hauliers">
-                <div class="form-group <?= isset($formError['name']) ? 'has-error' : '' ?>">
-                    <label for="name" class="col-lg-2 control-label <?= isset($formError['name']) ? 'inputError' : '' ?>">Nom de transporteur</label>
+                <div class="form-group <?= isset($formError['nameHaulier']) ? 'has-error' : '' ?>">
+                    <label for="nameHaulier" class="col-lg-2 control-label <?= isset($formError['nameHaulier']) ? 'inputError' : '' ?>">Nom de transporteur</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="name" value="<?= !empty($_POST['name']) ? $_POST['name'] : '' ?>" placeholder="Nom de transporteur" />
+                        <input type="text" class="form-control" name="nameHaulier" value="<?= !empty($_POST['nameHaulier']) ? $_POST['nameHaulier'] : '' ?>" placeholder="Nom de transporteur" />
                     </div>
                 </div>
                 <div class="form-group <?= isset($formError['phoneNumber']) ? 'has-error' : '' ?>">
