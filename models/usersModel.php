@@ -17,14 +17,14 @@ class users extends dataBase {
     }
 //Pour l'insertion de mon utilisateur dans ma base de données'
     public function addUsers() {
-        $query = 'INSERT INTO `piupiu_users` (`lastName`, `firstName`, `phoneNumber`, `email`, `password`, `idCommunes`) VALUES (:lastName, :firstName, :phoneNumber, :email, :password, :idCommunes)';
+        $query = 'INSERT INTO `piupiu_users` (`lastName`, `firstName`, `phoneNumber`, `email`, `password`) VALUES (:lastName, :firstName, :phoneNumber, :email, :password)';
         $responseRequest = $this->db->prepare($query);
         $responseRequest->bindValue(':lastName', $this->lastName, PDO::PARAM_STR);
         $responseRequest->bindValue(':firstName', $this->firstName, PDO::PARAM_STR);
         $responseRequest->bindValue(':phoneNumber', $this->email, PDO::PARAM_INT);
         $responseRequest->bindValue(':email', $this->email, PDO::PARAM_STR);
         $responseRequest->bindValue(':password', $this->password, PDO::PARAM_STR);
-        $responseRequest->bindValue(':idCommunes', $this->idCommunes, PDO::PARAM_INT);
+//        $responseRequest->bindValue(':idCommunes', $this->idCommunes, PDO::PARAM_INT);
         //Si l'insertion s'est correctement déroulée on retourne vrai
         return $responseRequest->execute();
     }
@@ -74,7 +74,7 @@ class users extends dataBase {
     }
 //Pour modifier les informations d'un utilisateur'
     public function modifyUser() {
-        $query = 'UPDATE `piupiu_users` SET `lastName`= :lastName,`firstName`= :firstName,`phoneNumber`= :phoneNumber,`email`= :email WHERE id = :id';
+        $query = 'UPDATE `piupiu_users` SET `lastName`= :lastName,`firstName`= :firstName,`phoneNumber`= :phoneNumber,`email`= :email WHERE `id` = :id';
         $user = $this->db->prepare($query);
         $user->bindValue(':lastName', $this->lastName, PDO::PARAM_STR);
         $user->bindValue(':firstName', $this->firstName, PDO::PARAM_STR);

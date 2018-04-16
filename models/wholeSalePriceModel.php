@@ -28,8 +28,8 @@ class wholeSalePrice extends dataBase {
                 . 'WHERE wspri.id = 1';
         $wholeSalePrice = $this->db->prepare($query);
         $wholeSalePrice->bindValue(':id', $this->id, PDO::PARAM_INT);
-        if ($wholeSalePrice->execute()) {
-            $wholeSalePriceList = $wholeSalePrice->fetchAll(PDO::FETCH_OBJ);
+     if($wholeSalePrice->execute()) {
+        $wholeSalePriceList = $wholeSalePrice->fetchAll(PDO::FETCH_OBJ);
         }
         return $wholeSalePriceList;
     }
@@ -39,6 +39,6 @@ class wholeSalePrice extends dataBase {
     }
 
 }
-  $hauliersResult->execute();
-        $hauliersList = $hauliersResult->fetch(PDO::FETCH_OBJ);
-        return $hauliersList;
+//  $hauliersResult->execute();
+//        $hauliersList = $hauliersResult->fetch(PDO::FETCH_OBJ);
+//        return $hauliersList;

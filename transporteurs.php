@@ -16,7 +16,7 @@ include_once 'models/hauliersModel.php';
 include_once 'controllers/transporteursController.php';
 ?>
 <div class="item-listing small-padding-bg">
-    <div class="container">
+    <div id="bgTrans" class="container">
         <div class="row">
             <?php foreach ($hauliersList as $hauliers) { ?>
             <div class="col-md-2"><a href="profil-camion.php"><img src="assets/img/img_transporteurs/transporteur.JPG" alt="camion" ></a> </div>

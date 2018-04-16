@@ -65,7 +65,7 @@ INNER JOIN `piupiu_communes` AS `com`
 ON `exp`.`idCommunes` = `com`.`id` 
 INNER JOIN `piupiu_departments` AS `dep` 
 ON `com`.`idDepartments` = `dep`.`id` 
-INNER JOIN `piupiu_regionsDistricts` AS `reg` 
+INNER JOIN `piupiu_regions` AS `reg` 
 ON `dep`.`idRegions` = `reg`.`id` 
 WHERE `reg`.`id` = :id;
 

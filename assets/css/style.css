@@ -11,8 +11,11 @@
     display:block;
     text-align:center;
 }
+.brand2{
+    font-size: 25px;
+}
+/*Debut profilUser*/
 .hr{
-    width: 100%; 
     color: #D35400; 
     height: 3px; 
     background-color:#F39C12;
@@ -23,39 +26,55 @@
     height: 3px; 
     background-color:#2ABB9B;
 }
-
-/*Debut formulaire*/
-
 label{
     display: inline-block;
     text-align: right;
 }
 .idUser{
-    border:1px solid #EB9532;
     border-radius: 5px;
     text-align: center;
 }
 .activity{
-    border: 1px solid #EB9532;
     border-radius: 5px;
     text-align: center;
+
 }
 .modal1{
-    border: 1px solid #EB9532;
-    border-radius: 5px;
-    text-align: center; 
+    margin: auto;
+}
+.delete{
+    border: 3px solid #D35400;
+    border-radius: 10px;
+    text-align: center;
+}
+#del{
+    margin: auto; 
+}
+.form1{
+    margin: auto;
+    background-color: #C8F7C5;
+    text-align: left;
+}
+#mdPass{
+    background-color: #2ABB9B; 
+}
+.modal-body{
+    background-image: url('../../assets/img/img_bckgrd/bg_cxins.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;     
 }
 .modal2{
-    border: 1px solid #D35400;
+    border: 3px solid #D35400;
     border-radius: 10px;
-    text-align: center; 
+    text-align: center;
 }
 .present{
-    border: 1px solid #EB9532;
     margin-bottom: 4px;
     border-radius: 5px;   
 }
-/*Fin formulaire*/
+/*Fin profilUser*/
 #access{
     height: 665px;
     border: 1px solid #CCC;
@@ -82,13 +101,7 @@ h2, h3, h4{
     display: inline-block;
     height: 350px;
 }
-/*body{
-    background-color: #68C3A3;
-       background-image: url(../img/img.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-}*/
+
 /*Debut du flash info*/
 #flashinfo{
     background-color: #EEEEEE;
@@ -133,14 +146,14 @@ Reposition the controls slightly
     left: -12px;
 }
 .carousel-control.right {
-    right: -12px;
+    right: 0px;
 }
 Changes the position of the indicators 
 .carousel-indicators {
     right: 50%;
     top: auto;
     bottom: 0px;
-    margin-right: -19px;
+/*    margin-right: -19px;*/
 }
 Changes the colour of the indicators 
 .carousel-indicators li {
@@ -152,7 +165,11 @@ Changes the colour of the indicators
 
 /*Debut footer*/
 .footer-section {
-    background: #019875;
+    background-image: url('../../assets/img/footer3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;  
     padding: 5em 0;
 
 }
@@ -182,45 +199,50 @@ Changes the colour of the indicators
 }*/
 /*Debut organisation profil-transporteur*/
 #profilHauliers{
-    /*    background-image: url(/assets/img/hauliersPictures/camion.jpg);*/
-    margin:auto;
-    padding-top: 175px;
-    width:850px;
-    height: 315px;
-    border: 3px solid #E87E04;    
+    background-image: url('../../assets/img/img_bckgrd/bg_plTrans2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;  
 }
 .infoHauliers{
-    background-color: #1BA39C;
-/*    padding: 20px;
-    margin: 25px;
-    height: 100px;*/
+/*    background-color: #1BA39C;*/
+    /*    padding: 20px;
+        margin: 25px;
+        height: 100px;*/
 
 }
 /*Debut organisation vivrier*/
 #profilVegetableProduct{
-    background-image: url(/assets/img/vegetableProduct/panier1.jpg);
-    margin:auto;
-    padding-top: 175px;
-    width:850px;
-    height: 315px;
-    border: 3px solid #E87E04;  
+    background-image: url('../../assets/img/img_bckgrd/bg_plExp.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;
 }
 .infoVegetableProduct{
-    background-color: #1BA39C;
-/*    padding: 20px;
-    margin: 25px;
-    height: 100px; */
+    /*    background-color: #1BA39C;*/
+    /*    padding: 20px;
+        margin: 25px;
+        height: 100px; */
 }
 /*Debut organisation camion*/
 #profilTrucks{
-
-    margin:auto;
-    padding-top: 175px;
-    width:850px;
-    height: 315px;
-    border: 3px solid #E87E04;    
+    background-image: url('../../assets/img/img_bckgrd/bg_plCam.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;  
 }
-
+#ptLegend{
+  background-color: #2ABB9B;   
+}
+#lbl{
+    color: white;
+}
+#pltrucks{
+      margin-top: 55px;
+}
 .infoTrucks{
     background-color: #1BA39C;
     /*    padding: 20px;
@@ -229,25 +251,24 @@ Changes the colour of the indicators
 }
 /*Debut organisation exploitations*/
 #profilExploitations{
-    background-image: url(/assets/img/exploitationsPictures/exploitations1.jpg);
-    margin:auto;
-     padding-top: 175px;
-    width:850px;
-    height: 315px;
-    border: 3px solid #E87E04;    
+    background-image: url('../../assets/img/img_bckgrd/bg_plExp.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif; 
 }
 
 .infoExploitations{
     background-color: #1BA39C;
-/*    padding: 20px;
-    margin: 25px;
-    height: 100px; */
+    /*    padding: 20px;
+        margin: 25px;
+        height: 100px; */
 }
 /*Debut organisation ferme*/
 #profilPoultryFarm{
     background-image: url(/assets/img/poultryFarm/poultry1.jpg);
     margin:auto;
-     padding-top: 175px;
+    padding-top: 175px;
     width:850px;
     height: 315px;
     border: 3px solid #E87E04;    
@@ -255,9 +276,9 @@ Changes the colour of the indicators
 
 .infoPoultryFarm{
     background-color: #1BA39C;
-/*    padding: 20px;
-    margin: 25px;
-    height: 100px; */
+    /*    padding: 20px;
+        margin: 25px;
+        height: 100px; */
 }
 .infoExploitations, .infoHauliers, .infoPoultryFarm, .infoTrucks, .infoVegetableProduct a:hover, a:active {
     background-color: #1BA39C;
@@ -338,7 +359,117 @@ p{
 }
 /*Carte d'accessibilité'*/
 .carte{
-
+margin-right: 50px;
 }
+/*Debut background pages*/
+#bgUser{
 
+    background-image: url('../../assets/img/img_bckgrd/bg_userp2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: serif;
+}
+#formmodif{
+    margin-top: 55px;
+}
+#pUser{
+
+    margin: auto;
+    background-color: #C8F7C5; 
+}
+#puLegend{
+    background-color: #2ABB9B;  
+}
+#bgAnnonce{
+    background-image: url('../../assets/img/img_bckgrd/bg_annonce.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;
+}
+#annonce{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: 95px;
+    margin-right: 95px;
+    background-color: #C8F7C5;
+}
+#anLegend{
+    background-color: #2ABB9B;  
+}
+#bgInscription{
+    background-image: url('../../assets/img/img_bckgrd/bg_cxins.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;   
+}
+#inscription{
+    margin: 95px; 
+    padding: auto; 
+    background-color: #C8F7C5;
+}
+#insLegend{
+    background-color: #2ABB9B;
+}
+#bgConnexion{
+    background-image: url('../../assets/img/img_bckgrd/bg_cxins.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;    
+}
+#cxLegend{
+    background-color: #2ABB9B;  
+}
+#connexion{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: 95px;
+    margin-right: 95px;
+    background-color: #C8F7C5;
+}
+#bgExp{
+    background-image: url('../../assets/img/img_bckgrd/bg_exp2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;    
+}
+#bgTrans{
+    background-image: url('../../assets/img/img_bckgrd/bg_trp2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;      
+}
+#bgCam{
+    background-image: url('../../assets/img/img_bckgrd/bg_cam.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;       
+}
+#bgPub{
+    background-image: url('../../assets/img/img_bckgrd/bg_pub.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;       
+}
+#bg_idx{
+   background-image: url('../../assets/img/img_bckgrd/bg_ix.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;        
+}
+#bgPdtCom{
+  background-image: url('../../assets/img/img_bckgrd/bg_pdtCom2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: serif;    
+}
 

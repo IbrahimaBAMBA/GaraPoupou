@@ -16,7 +16,7 @@ include_once 'models/productsDetailsModel.php';
 include_once 'controllers/produitsController.php';
 ?>
 <div class="item-listing small-padding-bg">
-    <div class="container">
+    <div id="bgPub" class="container">
         <div class="row">
             <?php foreach ($productsDetailsList as $productsDetails) { ?>
             <div class="col-md-2"><a href="#"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="" ></a> </div>
@@ -24,7 +24,7 @@ include_once 'controllers/produitsController.php';
                         <h1><?= $productsDetails->name ?></h1>
                     <p><?= $productsDetails->publicationDate ?></p>
                     <p><?= $productsDetails->imageLink ?></p>
-                    <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil</a></p>
+                    <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil du produit</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>
@@ -40,7 +40,7 @@ include_once 'controllers/produitsController.php';
                         <h1><?= $productsDetails->name ?></h1>
                     <p><?= $productsDetails->publicationDate ?></p>
                     <p><?= $productsDetails->imageLink ?></p>
-                    <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil</a></p>
+                    <p><a class="btn-md" href="profil-produit.php?productId=<?= $productsDetails->id ?>">Profil du produit</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>

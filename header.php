@@ -13,8 +13,8 @@
         <title>Accueil</title>
     </head>
     <body>           
-        <nav class="navbar navbar-default">
-            <div class="navbar">
+        <nav class="navbar navbar-default container-fluid">
+            <div class="navbar row">
                 <!-- Permet un meilleur affichage sur mobile -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -24,12 +24,12 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="brand1" href="#"><img alt="Brand" src="assets/img/favicon.png"></a>
-                    <a class="brand2" href="#"> Gara Poupou </a>
+                    <a class="brand2" href="#">Gara Poupou</a>
                 </div>
                 <!-- affiche les liens de la nav -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil</a></li>
+                        <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil </a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle  btn btn-info btn-sm" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exploitations <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -41,17 +41,17 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="profil-exploitation.php">Ajouter une exploitation</a></li>
+                                <li><a href="profil-exploitation.php">Modifier une exploitation</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Ajouter une annonce</a></li>
+<!--                                <li><a href="annonces.php">Ajouter une annonce</a></li>-->
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Articles et conseils sanitaires</a></li>
+<!--                                <li><a href="#">Articles et conseils sanitaires</a></li>-->
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle btn btn-info btn-sm" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transporteurs <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="transporteurs.php">Les sociétés de transports</a></li>
+                                <li><a href="transporteurs.php">Liste des sociétés de transports</a></li>
                                 <?php
                                 if (!empty($_SESSION['id'])) {
                                     ?>    
@@ -59,11 +59,11 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="profil-transporteur.php">Ajouter une société de transport</a></li>
+                                <li><a href="profil-transporteur.php">Modifier une société de transport</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Ajouter une annonce</a></li>
+<!--                                <li><a href="annonces.php">Ajouter une annonce</a></li>-->
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Articles et conseils sanitaires</a></li>
+<!--                                <li><a href="#">Articles et conseils sanitaires</a></li>-->
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -77,11 +77,11 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="profil-camion.php">Ajouter un camion</a></li>                               
+                                <li><a href="profil-camion.php">Modifier un camion</a></li>                               
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Ajouter une annonce</a></li>                              
+<!--                                <li><a href="annonces.php">Ajouter une annonce</a></li>                              -->
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Articles et conseils sanitaires</a></li>
+<!--                                <li><a href="#">Articles et conseils sanitaires</a></li>-->
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -95,11 +95,11 @@
                                     <?php
                                 }
                                 ?>
-                                <li><a href="profil-produit.php">Ajouter un produit</a></li>
+                                <li><a href="profil-produit.php">Modifier un produit</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Ajouter une annonce</a></li>                              
+<!--                                <li><a href="annonces.php">Ajouter une annonce</a></li>                              -->
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Articles et conseils sanitaires</a></li>
+<!--                                <li><a href="#">Articles et conseils sanitaires</a></li>-->
                             </ul>
                         </li>
                         <li><a href="annonces.php" class=" btn btn-info btn-md">Votre annonce ici !</a></li>
@@ -119,7 +119,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
-        <div class="container">
+<!--        <div class="container">-->
             <div id="flashinfo" class="row">
                 <div class="col-xs-12 col-sm-10 col-md-6 col-lg-2 effet">FLASH INFO !</div>
                 <div class="col-lg-10">

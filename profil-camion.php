@@ -15,51 +15,45 @@ include_once 'models/database.php';
 include_once 'models/trucksModel.php';
 include_once 'controllers/profil-camionController.php';
 ?>
-<!--<div  id="profilTrucks" class="row text-aligne">
-    
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-offset-1 col-lg-2 infoTrucks">
-            <img src="#" class="img-thumbnail" alt="photoId" > 
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 ">         
-            <p> <?= $trucks->name ?></p>        
-            <p><?= $trucks->imageLink ?></p>                 
-            <p><?= $trucks->volume ?></p> 
-            <p><a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>
-            <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
-            <p> <button type="button" class="btn btn-info">Supprimer</button> </p> 
-        </div>   
-</div>-->
 
-<!--<div id="profilTrucks"  class="container">
-    <div  class="row text-aligne">
-        <div class="infoTrucks">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-offset-1 col-lg-2 ">
-                <img src="#" class="img-thumbnail" alt="" > 
+<div id="profilTrucks" class="row">
+    <form id="pltrucks"action="#" method="POST" class="form-horizontal col-lg-offset-1 col-lg-10" enctype="multipart/form-data">
+    <fieldset>
+        <legend id="ptLegend">Modifier les informations du camion</legend>
+        <div class="form-group ">
+            <label id="lbl" for="name" class="col-lg-2 control-label <?= isset($formError['name']) ? 'inputError' : '' ?>">Nom du camion</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" name="name" value="<?= $trucks->name ?>" placeholder="Nom du camion" />
+
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-offset-1 col-lg-10 ">
-                <p> <?= $trucks->name ?></p>        
-                <p><?= $trucks->imageLink ?></p>                 
-                <p><?= $trucks->volume ?></p> 
-                <p><a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>
-                <p> <button type="button" class="btn btn-info">Modifier</button> </p>                 
-                <p> <button type="button" class="btn btn-info">Supprimer</button> </p>
+        </div>              
+        <div class="form-group ">
+            <label id="lbl" for="volume" class="col-lg-2 control-label <?= isset($formError['volume']) ? 'inputError' : '' ?>">Capacité du camion</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" name="volume" value="<?= $trucks->volume ?>" placeholder="capacité du camion" />
             </div>
         </div>
-    </div>
-</div>-->
-<div id="profilTrucks" class="container">
-    <div class="row infoTrucks">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-2">
-            <img src="#" class="img-thumbnail" alt="" >  
+        <div class="form-group">
+            <label id="lbl" for="monImage" class="col-lg-2 control-label ">Image du camion</label>
+            <div class="col-lg-10">
+                <input type="file" name="monImage" id="fileToUpload">
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-offset-1 col-lg-9">
-            <p> <?= $trucks->name ?></p>        
-            <p><?= $trucks->imageLink ?></p>                 
-            <p><?= $trucks->volume ?></p>            
-            <p> <button type="button" class="btn btn-info">Modifier</button>
-                <button type="button" class="btn btn-info">Supprimer</button> 
-                <a class="btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a></p>                           
+        <div class="form-group ">
+            <label id="lbl" for="textArea" class="col-lg-2 control-label">Description</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                <span class="help-block">Decrivez en quelques mots vos activités.</span>
+            </div>
         </div>
-    </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <p><input name="modifyTruckProfil" type="submit" value="Modifier" class="btn btn-info btn-md" /> <a class="btn btn-info btn-md" href="camions.php?trucksId=<?= $trucks->id ?>">Liste des camions</a>
+                <button name="deleteTruckProfil" type="submit" value="Valider" class="btn btn-info btn-md">Suppression du profil du camion</button> 
+                </p>
+            </div>
+        </div>
+    </fieldset>
+</form>
 </div>
 <?php include 'footer.php'; ?> 

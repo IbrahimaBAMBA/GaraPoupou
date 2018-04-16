@@ -16,7 +16,7 @@ include_once 'models/productCommuneModel.php';
 include_once 'controllers/productCommuneController.php';
 ?>
 <div class="item-listing small-padding-bg">
-    <div class="container">
+    <div id="bgPdtCom" class="container">
         <div class="row">
             <?php foreach ($productCommuneList as $productCommune) { ?>
             <div class="col-md-2"><a href="profil-produit.php"><img src="assets/img/img_produits_vivriers/aubergines.jpg" alt="camion" ></a> </div>
@@ -25,8 +25,7 @@ include_once 'controllers/productCommuneController.php';
                     <p><?= $productCommune->exploitationName ?></p>
                     <p><?= $productCommune->communeName ?></p>
                     <p><?= $productCommune->publicationDate ?></p>
-                    <p><?= $productCommune->imageLink ?></p>
-                    <p><a class="btn-md" href="#?productId=<?= $productCommune->proposalId ?>">Liste de produits par commune</a></p>
+                    <p><a class="btn-md" href="#?productId=<?= $productCommune->proposalId ?>">Liste des produits par commune</a></p>
                     <div class="list-enquiry">
                         <ul>
                             <li class="btn btn-md btn-warning"><a href="#!"><i class="fa fa-star-o" aria-hidden="true"></i>+images!</a> </li>

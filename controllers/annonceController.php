@@ -10,25 +10,29 @@ $regName = '#^[A-Z0-9\. ]+$#i';
 $regemail = '#[A-Z-a-z-0-9-.éàèîÏôöùüûêëç]{2,}@[A-Z-a-z-0-9éèàêâùïüëç]{2,}[.][a-z]{2,6}$#';
 $regPhone = '#^0[1-9]((-[0-9]{2}){4}|(([0-9]{2})){4}|(\/[0-9]{2}){4}|(\\[0-9]{2}){4}|(_[0-9]{2}){4}|(\s[0-9]{2}){4})$#';
 $regPassword = '#^([a-zA-Z0-9@*#]{8,15})$#';
+$regexDate = '/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/';
 $insertSuccess = false;
 $formError = array();
 
-
+$productType = new productTypeModel();
+$productTypeList = $productType->getlistProductType();
 $communes = new communes();
 $communesList = $communes->getCommunesList();
 
 $exploitations = new exploitations();
+
+
 $trucks = new trucks();
 $productsDetails = new productsDetails();
 
 $hauliers = new hauliers();
 //????
 $hauliers->idUsers = $_SESSION['id'];
-$hauliers->getHaulierByIdUsers();
+$hauliersList = $hauliers->getHaulierByIdUsers();
 
-//if (isset($_POST['categorie'])) {
-//    var_dump($_POST['categorie']);
-//}
+$exploitations->idUsers = $_SESSION['id'];
+$exploitations->getExploitationsList();
+$exploitationList = $exploitations->getExploitationsByIdUsers();
 
 
 if (count($_POST) > 0) {
@@ -63,7 +67,8 @@ if (count($_POST) > 0) {
 
         if (count($formError) == 0) {
             //On fait le lien qu'il y'a entre les deux tables (camion et transporteur) par l'id de haulier.
-            $trucks->idHauliers = $hauliers->id;
+
+            $trucks->idHauliers = $_POST['société'];
             if ($trucks->addTruckAnnouncement()) {
                 $insertSuccess = true;
                 $trucks->name = '';
@@ -88,9 +93,9 @@ if (count($_POST) > 0) {
         } else {
             $formError['nameExploitation'] = 'Le nom de l\'exploitation n\'est pas renseigné';
         }
-        if (!empty($_POST['phoneNumber'])) {
-            if (preg_match($regPhone, $_POST['phoneNumber'])) {
-                $exploitations->phoneNumber = htmlspecialchars($_POST['phoneNumber']);
+        if (!empty($_POST['phoneNumberE'])) {
+            if (preg_match($regPhone, $_POST['phoneNumberE'])) {
+                $exploitations->phoneNumber = htmlspecialchars($_POST['phoneNumberE']);
             } else {
                 $formError['phoneNumber'] = 'Le numero de téléphone n\'est pas correcte';
             }
@@ -106,6 +111,7 @@ if (count($_POST) > 0) {
 
         //Ici j'appelle la methode que j'ai crée dans mon model pour envoyer les infos dans la base de données
         if (count($formError) == 0) {
+
             if ($exploitations->addExploitationAnnouncement()) {
                 $insertSuccess = true;
                 $exploitations->name = '';
@@ -130,17 +136,14 @@ if (count($_POST) > 0) {
         } else {
             $formError['namePdetails'] = 'Le nom de produit n\'est pas renseigné';
         }
-        if (!empty($_POST['publicationDate'])) {
-            if (preg_match($regemail, $_POST['publicationDate'])) {
-                $productsDetails->publicationDate = htmlspecialchars($_POST['publicationDate']);
-            } else {
-                $formError['publicationDate'] = 'Veuillez renseigner la date de publication';
-            }
-        }
-        //else {
-//        $formError['publicationDate'] = 'Renseignez la date de publication';
-//    }
 
+
+if(!empty($_POST['typeProduit'])){
+//    si un produit est selectionné on le recupère
+    $productsDetails->idProductTypes = $_POST['typeProduit'];
+}else {
+    $formError['typeProduit'] = 'Veuillez renseigner un type de produit';
+}
         if (!empty($_POST['idCommunes'])) {
             $productsDetails->idCommunes = $_POST['idCommunes'];
         } else {
@@ -149,14 +152,28 @@ if (count($_POST) > 0) {
 
         //Ici j'appelle la methode que j'ai crée dans mon model pour envoyer les infos dans la base de données
         if (count($formError) == 0) {
-            if ($productsDetails->addProductAnnouncement()) {
+            if(!empty($_POST['exploitation'])){
+                // Si il y a une exploitation
+                $idExploitations = $_POST['exploitation'];
+                            if ($productsDetails->addProductExploitation($idExploitations)) {
                 $insertSuccess = true;
-                $productsDetails->name = '';
-                $productsDetails->imageLink = '';
-                $productsDetails->publicationDate = '';
-                $productsDetails->idProductTypes = '';
+//                $productsDetails->name = '';
+//                $productsDetails->imageLink = '';
+//                $productsDetails->publicationDate = '';
+//                $productsDetails->idProductTypes = '';
             } else {
                 $formError['add'] = 'Le produit n\'a pas pu être créé';
+            }
+            }else{
+            if ($productsDetails->addProductAnnouncement()) {
+                $insertSuccess = true;
+//                $productsDetails->name = '';
+//                $productsDetails->imageLink = '';
+//                $productsDetails->publicationDate = '';
+//                $productsDetails->idProductTypes = '';
+            } else {
+                $formError['add'] = 'Le produit n\'a pas pu être créé';
+            }
             }
         }
     }
@@ -172,9 +189,9 @@ if (count($_POST) > 0) {
         } else {
             $formError['nameHaulier'] = 'Le nom de votre entité n\'est pas renseigné';
         }
-        if (!empty($_POST['phoneNumber'])) {
-            if (preg_match($regPhone, $_POST['phoneNumber'])) {
-                $hauliers->phoneNumber = htmlspecialchars($_POST['phoneNumber']);
+        if (!empty($_POST['phoneNumberH'])) {
+            if (preg_match($regPhone, $_POST['phoneNumberH'])) {
+                $hauliers->phoneNumber = htmlspecialchars($_POST['phoneNumberH']);
             } else {
                 $formError['phoneNumber'] = 'Le numero de téléphone n\'est pas correcte';
             }

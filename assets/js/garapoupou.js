@@ -30,11 +30,23 @@ $('#categorie').click(function () {
     //Et selon donc l'option que je choisi dans mon select, j'affecte la fonction show et ainsi de suite selon le choix       
     if ($('#trucks').is(':selected')) {
         $('.trucks').show();
+        $('.exploitations').hide();
+        $('.pDetails').hide();
+        $('.hauliers').hide();
     } else if ($('#exploitations').is(':selected')) {
+        $('.trucks').hide();
         $('.exploitations').show();
+        $('.pDetails').hide();
+        $('.hauliers').hide();
     } else if ($('#pDetails').is(':selected')) {
+        $('.trucks').hide();
+        $('.exploitations').hide();
         $('.pDetails').show();
+        $('.hauliers').hide();
     } else if ($('#hauliers').is(':selected')) {
+        $('.trucks').hide();
+        $('.exploitations').hide();
+        $('.pDetails').hide();
         $('.hauliers').show();
     }
 });

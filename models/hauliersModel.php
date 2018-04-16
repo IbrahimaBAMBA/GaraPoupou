@@ -11,7 +11,7 @@ class hauliers extends dataBase {
     public function __construct() {
         parent::__construct();
     }
-
+//Pour afficher la liste des transporteurs
     public function getHauliersList() {
         $hauliersList = array();
         $query = 'SELECT `id`, `name`, `phoneNumber`, `idUsers` FROM `piupiu_hauliers`';
@@ -34,9 +34,9 @@ class hauliers extends dataBase {
         $idUserHaulier = $this->db->prepare($query);
         $idUserHaulier->bindValue(':idUsers', $this->idUsers, PDO::PARAM_INT);
         $idUserHaulier->execute();
-        $idUserHaulierList = $idUserHaulier->fetch(PDO::FETCH_OBJ);
+        $idUserHaulierList = $idUserHaulier->fetchAll(PDO::FETCH_OBJ);
 //        hydratation???
-        $this->id = $idUserHaulierList->id;
+//        $this->id = $idUserHaulierList->id;
         return $idUserHaulierList;
     }
 

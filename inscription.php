@@ -1,14 +1,19 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<?php
 include 'header.php';
 include_once 'models/database.php';
 include_once 'models/usersModel.php';
 include_once 'models/communesModel.php';
 include_once 'controllers/inscriptionController.php';
 ?>
-<div class="row">
-    <form class="form-horizontal well col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" action="#" method="POST">
+<div id="bgInscription" class="row">
+    <form id="inscription" class="form-horizontal well col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" action="#" method="POST">
         <fieldset>
-            <legend>Inscription</legend>
+            <legend id="insLegend">Inscription</legend>
             <div class="form-group <?= isset($formError['lastName']) ? 'has-error' : '' ?>">
                 <label for="lastName" class="col-lg-2 control-label">Prénom</label>
                 <div class="col-lg-10">
